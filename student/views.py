@@ -13,5 +13,6 @@ class CandidateList(ListView):
 
 class CandidateCreate(CreateView):
     model = candidate
-    fields = ('admno','name','fname','dob','gender','phone','std','section','active')
+    # fields = ('admno','name','fname','dob','gender','phone','std','section','active')
+    fields = '__all__'
     template_name = 'student/add.html'

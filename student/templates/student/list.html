@@ -5,6 +5,7 @@
     <th> Name </th>
     <th> Father Name </th>
     <th> Class </th>
+    <th>Image</th>
 </tr>
 {% for object in object_list %}
    <tr>
@@ -12,6 +13,7 @@
         <td> {{object.name}}</td>
         <td> {{object.fname}}</td>
         <td> {{object.std}}-{{object.section}}</td>
+        <td><img src="{{object.photo.url}}"/></td>
    </tr>
 {% endfor %}
 </table>

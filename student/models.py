@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from django.template.defaultfilters import mark_safe
+
 
 
 
@@ -25,7 +27,7 @@ class candidate(models.Model):
     phone   = models.CharField(max_length=10)
     std  =  models.CharField(max_length= 1, choices = SECTION)
     section = models.CharField(max_length=15)
-    photo   = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/None/no-img.jpg')
+    photo   = models.ImageField()
     active = models.BooleanField()
 
     class Meta:
