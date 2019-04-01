@@ -3,6 +3,15 @@ from django.views.generic import ListView, DetailView,CreateView,UpdateView,Dele
 from .models import candidate
 # Create your views here.
 
-class studentList(ListView):
+""" def studentList(request):
+    return render(request,"student/list.html") """
+
+
+class CandidateList(ListView):
     model = candidate
-    template = 'student/list.html'
+    template_name = 'student/list.html'
+
+class CandidateCreate(CreateView):
+    model = candidate
+    fields = ('admno','name','fname','dob','gender','phone','std','section','active')
+    template_name = 'student/add.html'

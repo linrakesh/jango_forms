@@ -1,1 +1,17 @@
-<h1> This is model form example for Django </h1>
+<h1> Student List </h1>
+<table border="1" width="100%">
+<tr>
+    <th> Admno</th>
+    <th> Name </th>
+    <th> Father Name </th>
+    <th> Class </th>
+</tr>
+{% for object in object_list %}
+   <tr>
+        <td> {{object.admno}}</td>
+        <td> {{object.name}}</td>
+        <td> {{object.fname}}</td>
+        <td> {{object.std}}-{{object.section}}</td>
+   </tr>
+{% endfor %}
+</table>
