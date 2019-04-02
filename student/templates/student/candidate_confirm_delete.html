@@ -1,0 +1,6 @@
+<form action="" method="post">
+    {% csrf_token %}
+    <p> Are Your Sure to delete this Item </p>
+    <input type="submit" class="btn btn-primary" value="Delete" name="confirm_delete" />
+    <input type="submit" class="btn btn-primary" value="Cancel" name="cancel"/>
+</form>

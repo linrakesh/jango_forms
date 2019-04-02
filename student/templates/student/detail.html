@@ -1,26 +1,23 @@
 {% extends 'student/base.html' %}
 
 {% block content%}
-    <h1> Student List </h1>
+    <h1> Student Details </h1>
     <table width="100%">
         <tr>
-            <th> ID </th>
             <th> Admno</th>
             <th> Name </th>
             <th> Father Name </th>
             <th> Class </th>
             <th>Image</th>
+            <th>Action</th>
         </tr>
-        {% for object in object_list %}
         <tr>
-            <td> {{object.id}} </td>
             <td> {{object.admno}}</td>
             <td> {{object.name}}</td>
             <td> {{object.fname}}</td>
             <td> {{object.std}}-{{object.section}}</td>
-            <td><a href="{% url 'student-detail' object.id %}"><img src="{{object.photo.url}}" width="80" height="auto" /></a></td>
+            <td><img src="{{object.photo.url}}" width="150" height="auto" /></td>
+            <td> <a href="{% url 'student-delete' object.id  %}">Delete</a> |  <a href="#">Edit</a></td>
         </tr>
-        {% endfor %}
-    </table>
-    
+        </table>
  {% endblock %}
