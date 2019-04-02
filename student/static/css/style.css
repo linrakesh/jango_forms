@@ -1,1 +1,5 @@
-body{background: red;color:white;}
+body{background:#f1f1f1;color:#444;}
+table{border:1px solid #111 ; border-collapse: collapse;}
+th{background:#222;color:#fff;padding:3px 10px;}
+tr:nth-child(odd){background:#d9d9d9;}
+td{padding:3px 10px;}
