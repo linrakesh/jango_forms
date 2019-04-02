@@ -10,6 +10,7 @@ from .models import candidate
 class CandidateList(ListView):
     model = candidate
     template_name = 'student/list.html'
+    paginate_by = 3
 
 class CandidateCreate(CreateView):
     model = candidate
