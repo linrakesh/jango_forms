@@ -26,6 +26,11 @@ class CandidateCreate(CreateView):
     template_name = 'student/add.html'
 
 
+class CandidateUpdate(UpdateView):
+    model = candidate
+    fields = ('admno','name','fname','dob','gender','phone','std','section','active')
+    
+
 class CandidateDelete(DeleteView):
     model = candidate
     success_url = reverse_lazy('student-list')
