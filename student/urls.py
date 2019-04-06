@@ -7,6 +7,5 @@ urlpatterns = [
     path('student/<int:pk>/', CandidateDetail.as_view(), name="student-detail"),
     path('student/<int:pk>/delete', CandidateDelete.as_view(), name="student-delete"),
     path('student/<int:pk>/update', CandidateUpdate.as_view(), name="student-update"),
-
-    
+   
 ]

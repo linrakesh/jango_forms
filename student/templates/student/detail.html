@@ -17,7 +17,7 @@
             <td> {{object.fname}}</td>
             <td> {{object.std}}-{{object.section}}</td>
             <td><img src="{{object.photo.url}}" width="150" height="auto" /></td>
-            <td> <a href="{% url 'student-delete' object.id  %}">Delete</a> |  <a href="#">Edit</a></td>
+            <td> <a href="{% url 'student-delete' object.id  %}">Delete</a> |  <a href="{% url 'student-update' object.id  %}">Edit</a></td>
         </tr>
         </table>
  {% endblock %}

@@ -40,4 +40,4 @@ class candidate(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("candidate_detail", kwargs={"pk": self.pk})
+        return reverse("student-detail", kwargs={"pk": self.pk})

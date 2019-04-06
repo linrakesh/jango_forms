@@ -28,8 +28,9 @@ class CandidateCreate(CreateView):
 
 class CandidateUpdate(UpdateView):
     model = candidate
-    fields = ('admno','name','fname','dob','gender','phone','std','section','active')
-    
+    ''' fields = ('admno','name','fname','dob','gender','phone','std','section','active') '''
+    fields = '__all__'
+    template_name  ='student/add.html'
 
 class CandidateDelete(DeleteView):
     model = candidate
