@@ -15,12 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.contrib.auth.views import LoginView,LogoutView
 from django.conf import settings   # this is useful for importing media settings
 from django.conf.urls.static import static  # this is for static files
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/',LoginView.as_view(template_name='student/login.html'),name='login'),
+    path('logout/',LogoutView.as_view(),name='logout'),
     path('', include('student.urls')),
 ]
 
