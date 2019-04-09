@@ -10,6 +10,19 @@
 </head>
 <body>
     <img src="{% static 'images/logo.png' %}" alt="website  Logo">
+    <ul>    
+        <li><a href="{% url 'student-list' %}">Home</a></li>
+        <li><a href="{% url 'student-add' %}">Add Student</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'logout'%}">Logout</a></li>
+        {% else %}
+            <li><a href="{% url 'login'%}">Login</a></li>
+        {% endif %}
+        <li><a href="#">Register</a></li>
+        <li><a href="#">Contact us</a></li>
+       
+    </ul>
+
     {% block content %}
     {% endblock %}
     {% include 'student/paginate.html' %}

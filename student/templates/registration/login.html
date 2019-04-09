@@ -1,0 +1,18 @@
+{% extends 'student/base.html'%}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1> Login page </h1>
+<form method="post" action ="{% url 'login' %}">
+{% csrf_token %}
+{% comment %} {{form.username.label.tag}}
+{{form.username}}
+
+
+{{form.password.label.tag}}
+{{form.password}}
+
+{{form.errors}} {% endcomment %}
+{{form|crispy}}
+<input type="submit" value ="login">
+</form>
+{% endblock %}

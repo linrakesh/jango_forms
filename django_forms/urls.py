@@ -22,8 +22,8 @@ from django.conf.urls.static import static  # this is for static files
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/',LoginView.as_view(template_name='student/login.html'),name='login'),
-    path('logout/',LogoutView.as_view(),name='logout'),
+    path('login/',LoginView.as_view(template_name='registration/login.html'),name='login'),
+    path('logout/',LogoutView.as_view(template_name='registration/logout.html'),name='logout'),
     path('', include('student.urls')),
 ]
 

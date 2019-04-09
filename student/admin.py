@@ -6,7 +6,7 @@ class candidateAdmin(admin.ModelAdmin):
     list_display = ['admno','name','fname','dob','std','section','image_tag']
     search_fields = ('name','fname')
     ordering =  ('section',)
-    list_per_page = 4
+    list_per_page = 10
 
 
     def image_tag(self, obj):
