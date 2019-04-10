@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from django.contrib.auth.views import LoginView,LogoutView
+from django.contrib.auth.views import LoginView,LogoutView,PasswordResetView,PasswordResetConfirmView
 from django.conf import settings   # this is useful for importing media settings
 from django.conf.urls.static import static  # this is for static files
 
@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/',LoginView.as_view(template_name='registration/login.html'),name='login'),
     path('logout/',LogoutView.as_view(template_name='registration/logout.html'),name='logout'),
+    path('password-reset/',PasswordResetView.as_view(template_name='registration/password_reset.html'),name='password_reset'),
     path('', include('student.urls')),
 ]
 
