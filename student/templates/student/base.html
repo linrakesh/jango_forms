@@ -9,22 +9,32 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="{% static 'images/logo.png' %}" alt="website  Logo">
-    <ul>    
-        <li><a href="{% url 'student-list' %}">Home</a></li>
-        <li><a href="{% url 'student-add' %}">Add Student</a></li>
-        {% if user.is_authenticated %}
-            <li><a href="{% url 'logout'%}">Logout</a></li>
-        {% else %}
-            <li><a href="{% url 'login'%}">Login</a></li>
-        {% endif %}
-        <li><a href="#">Register</a></li>
-        <li><a href="#">Contact us</a></li>
-       
-    </ul>
+    <div class="container">  
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="website  Logo">
+        </div>
+        <div class="menu">
+            <ul>    
+                <li><a href="{% url 'student-list' %}">Home</a></li>
+                <li><a href="{% url 'student-add' %}">Add Student</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout'%}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login'%}">Login</a></li>
+                {% endif %}
+                <li><a href="#">Register</a></li>
+                <li><a href="{% url 'contact-us' %}">Contact us</a></li>
+            
+            </ul>
+        </div>
+    </div>
 
-    {% block content %}
-    {% endblock %}
-    {% include 'student/paginate.html' %}
+    <div class="container-simple">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="container">
+        {% include 'student/paginate.html' %}
+    </div>
 </body>
 </html>

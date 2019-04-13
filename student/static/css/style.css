@@ -3,3 +3,14 @@ table{border:1px solid #111 ; border-collapse: collapse;}
 th{background:#222;color:#fff;padding:3px 10px;}
 tr:nth-child(odd){background:#d9d9d9;}
 td{padding:3px 10px;}
+h1,h2,h3,h4,h5,h6{display:block;}
+.container-simple {width:100%;max-width:1300px;margin:0 auto;}
+.container {display:flex;width:100%;max-width:1300px;margin:0 auto;}
+
+.container .logo{flex:1;}
+.container .menu{flex:3;}
+.menu a{text-decoration:none;}
+.menu ul{list-style-type: none;float:right;}
+.menu ul li{display:inline;font-size:18px;padding:5px 10px;}
+
+
