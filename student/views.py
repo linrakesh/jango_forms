@@ -27,7 +27,6 @@ def contactus(request):
     
     return render(request,'student/contact_us.html', {'form':form} )
 
-
 class CandidateList(ListView):
     model = candidate
     template_name = 'student/list.html'
