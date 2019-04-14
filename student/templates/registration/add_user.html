@@ -1,0 +1,10 @@
+{% extends 'student/base.html'%}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1> Register New User Account </h1>
+<form method="post">
+    {% csrf_token %}
+    {{form|crispy}}
+    <input type="submit" value ="Add New User">
+</form>
+{% endblock %}

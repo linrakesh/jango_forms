@@ -11,7 +11,7 @@
 <body>
     <div class="container">  
         <div class="logo">
-            <img src="{% static 'images/logo.png' %}" alt="website  Logo">
+            <a href="{% url 'student-list' %}"><img src="{% static 'images/logo.png' %}" alt="website  Logo"></a>
         </div>
         <div class="menu">
             <ul>    
@@ -21,8 +21,9 @@
                     <li><a href="{% url 'logout'%}">Logout</a></li>
                 {% else %}
                     <li><a href="{% url 'login'%}">Login</a></li>
+                     <li><a href="{% url 'register' %}">Register</a></li>
                 {% endif %}
-                <li><a href="#">Register</a></li>
+               
                 <li><a href="{% url 'contact-us' %}">Contact us</a></li>
             
             </ul>

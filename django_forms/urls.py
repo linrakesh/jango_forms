@@ -18,13 +18,16 @@ from django.urls import path,include
 from django.contrib.auth.views import (
         LoginView,
         LogoutView,
+
         PasswordResetView,
         PasswordResetDoneView,
         PasswordResetConfirmView, 
         PasswordResetCompleteView,
         )
+
 from django.conf import settings   # this is useful for importing media settings
 from django.conf.urls.static import static  # this is for static files
+
 
 
 urlpatterns = [

@@ -1,7 +1,9 @@
 from django.http    import HttpResponseRedirect
+
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView,UpdateView,DeleteView
+from django.views.generic.edit import CreateView,UpdateView,DeleteView,FormView
+from django.contrib.auth.models import User   # for adding new user fron front end
 from django.urls import reverse_lazy
 from .models import candidate
 from .forms import ContactUs
@@ -10,6 +12,14 @@ from .forms import ContactUs
 """ def studentList(request):
     return render(request,"student/list.html") """
 
+class AddUser(CreateView):
+    model = User
+    # fields = '__all__'
+    fields = ('username','first_name','last_name','email','password')
+    template_name ='registration/add_user.html'
+    success_url = '/thanks/'
+    
+    
 def thanks(request):
     return render(request,"student/thanks.html")
 
@@ -27,10 +37,12 @@ def contactus(request):
     
     return render(request,'student/contact_us.html', {'form':form} )
 
+
 class CandidateList(ListView):
     model = candidate
     template_name = 'student/list.html'
-    paginate_by = 10
+    paginate_by = 6
+
 
 class CandidateDetail(DetailView):
     model = candidate

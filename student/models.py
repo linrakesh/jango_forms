@@ -2,10 +2,6 @@ from django.db import models
 from django.urls import reverse
 from django.template.defaultfilters import mark_safe
 
-
-
-
-
 # Create your models here.
 class candidate(models.Model):
     GENDER = (
